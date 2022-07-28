@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    app 根组件
     <router-view />
   </div>
 </template>
