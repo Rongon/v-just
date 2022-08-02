@@ -1,8 +1,8 @@
 <template>
   <div id="login">
     <b-img src="../assets/justBG.webp" id="img1"></b-img>
-    <b-img src="../assets/justXH.png" id="img2"></b-img>
-    <b-form id="loginBox" class="col-lg-4">
+    <b-form id="loginBox">
+      <b-img src="../assets/justXH.png" id="img2"></b-img>
       <b-form-group id="fieldset-1" label="Enter email:" :invalid-feedback="usernameInvalidFeedback">
         <b-form-input id="input-1" v-model="loginForm.username" :state="usernameState" trim></b-form-input>
       </b-form-group>
@@ -74,6 +74,7 @@ export default {
 #img2 {
   position: absolute;
   left: 50%;
+  top: -80%;
   width: 150px;
   height: 150px;
   transform: translate(-75px, 120px);
@@ -91,6 +92,7 @@ export default {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 500px;
   transform: translate(-237px, -111px);
   padding: 60px 30px 30px 30px;
   background-color: #fff;
@@ -99,10 +101,7 @@ export default {
 }
 #fieldset-btn {
   margin-top: 10px;
-  padding-left: 300px;
-}
-#btn1,
-#btn2 {
-  margin-right: 10px;
+  display: flex;
+  justify-content: flex-end;
 }
 </style>
