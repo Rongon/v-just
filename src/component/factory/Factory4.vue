@@ -12,15 +12,27 @@
           <b-nav-item>4</b-nav-item>
         </b-nav>
       </div>
-      <div class="mainBox">
+      <div class="main">
         <b-breadcrumb>
           <b-breadcrumb-item :to="{ path: '/home' }">Home</b-breadcrumb-item>
           <b-breadcrumb-item active disabled>Factory</b-breadcrumb-item>
         </b-breadcrumb>
-        <b-img class="img1" src="../assets/just1.jpg" @click="entFac1"></b-img>
-        <b-img class="img2" src="../assets/just2.webp" @click="entFac2"></b-img>
-        <b-img class="img3" src="../assets/just3.webp" @click="entFac3"></b-img>
-        <b-img class="img4" src="../assets/just4.webp" @click="entFac4"></b-img>
+        <b-card no-body>
+          <b-tabs card>
+            <b-tab title="Tab 1" active>
+              <b-table striped hover :items="items"></b-table>
+            </b-tab>
+            <b-tab title="Tab 2">
+              <b-table striped hover :items="items"></b-table>
+            </b-tab>
+            <b-tab title="Tab 3">
+              <b-table striped hover :items="items"></b-table>
+            </b-tab>
+          </b-tabs>
+        </b-card>
+        <b-img src="../../assets/justBG2.jpeg"></b-img>
+        <b-img src="../../assets/justBG2.jpeg"></b-img>
+        <b-img src="../../assets/justBG2.jpeg"></b-img>
       </div>
     </div>
   </div>
@@ -29,23 +41,18 @@
 <script>
 export default {
   data() {
-    return {}
+    return {
+      items: [
+        { age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
+        { age: 21, first_name: 'Larsen', last_name: 'Shaw' },
+        { age: 89, first_name: 'Geneva', last_name: 'Wilson' },
+        { age: 38, first_name: 'Jami', last_name: 'Carney' }
+      ]
+    }
   },
   methods: {
     loginout() {
       this.$router.push('/login')
-    },
-    entFac1() {
-      this.$router.push('/factory1')
-    },
-    entFac2() {
-      this.$router.push('/factory2')
-    },
-    entFac3() {
-      this.$router.push('/factory3')
-    },
-    entFac4() {
-      this.$router.push('/factory4')
     }
   }
 }
@@ -79,35 +86,17 @@ export default {
   height: 100%;
   background-color: #2da4e1;
 }
-.mainBox {
-  position: relative;
-  margin: 0;
+.main {
   width: 100%;
-  height: 100%;
+  padding: 20px;
+}
+.card {
+  height: 345px;
 }
 img {
-  width: 30%;
-  height: 30%;
-}
-.img1 {
-  position: absolute;
-  top: 10%;
-  left: 10%;
-}
-.img2 {
-  position: absolute;
-  top: 10%;
-  left: 60%;
-}
-.img3 {
-  position: absolute;
-  top: 60%;
-  left: 10%;
-}
-.img4 {
-  position: absolute;
-  top: 60%;
-  left: 60%;
+  width: 300px;
+  height: 150px;
+  margin: 10px 0 0 70px;
 }
 .nav-item {
   height: 70px;
@@ -115,11 +104,5 @@ img {
 }
 .nav-link {
   color: #fff;
-}
-.breadcrumb {
-  margin: 20px 20px 15px 20px;
-}
-.breadcrumb-item{
-  text-decoration: none;
 }
 </style>
